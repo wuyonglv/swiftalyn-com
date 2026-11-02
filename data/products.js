@@ -1,0 +1,39 @@
+// Local featured catalog. Keep product images under images/products/.
+// Product schema: { id, name, price (number), currency (e.g. "GBP"),
+//   image (local relative path), imageAlt, description, href (local relative path) }
+// Product details transcribed from the supplied original product cards.
+// All product images are stored locally. Add local detail pages when available.
+window.SWIFTALYN_PRODUCTS = [
+  {
+    id: '019fa946-99a9-741a-a925-aea91b717db2',
+    name: 'Seborrheic Dermatitis & Folliculitis Scalp Shampoo: For Scalp Prone to Dandruff & Psoriasis – Soothes Itchy, Flaky Scalp – with Tea Tree, Rosemary, Biotin & Caffeine – Sulphate-Free 280ml',
+    price: 24.99,
+    currency: 'GBP',
+    image: 'images/products/scalp-shampoo-280ml.png',
+    imageAlt: 'Swiftalyn Scalp Shampoo 280ml'
+  },
+  {
+    id: '019fa94c-b129-71ea-ab80-4a0bf12ead8e',
+    name: 'Antifungal Treatment Cream for Skin: Natural Herbal Formula for Skin Prone to Athlete’s Foot, Ringworm, Jock Itch & Foot Fungus – Daily Use for Men & Women 20g',
+    price: 12.99,
+    currency: 'GBP',
+    image: 'images/products/antifungal-cream-20g.png',
+    imageAlt: 'Swiftalyn Antifungal Treatment Cream 20g'
+  },
+  {
+    id: '019d9029-1272-703c-a37b-c8e38827eb83',
+    name: 'Maximum Strength Wart Remover: Advanced Liquid Treatment for Plantar, Common, Flat, and Genital Warts – Fast and Effective Removal for Feet and Skin',
+    price: 19.99,
+    currency: 'GBP',
+    image: 'images/products/wart-remover.jpg',
+    imageAlt: 'Swiftalyn Maximum Strength Wart Remover'
+  },
+  {
+    id: '019d9029-1e73-721d-a22c-04248a275791',
+    name: 'Nail Treatment For Toenails: Extra Strength Nail Solution with Brush for Toenails, Fingernails, Cuticles, Ingrown Nail Treatment - Fast Repair & Growth Formula',
+    price: 19.99,
+    currency: 'GBP',
+    image: 'images/products/nail-treatment.jpg',
+    imageAlt: 'Swiftalyn Nail Treatment For Toenails'
+  }
+];
