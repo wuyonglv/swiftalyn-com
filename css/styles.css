@@ -629,3 +629,6 @@ SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
 .contact-hours { border-collapse: collapse; width: 100%; max-width: 360px; }
 .contact-hours th, .contact-hours td { padding: 4px 12px 4px 0; text-align: left; }
 .contact-hours th { font-weight: normal; }
+
+/* Footer copyright spans the container on every screen size. */
+.x .footer-copyright { width: 100%; text-align: center; }
