@@ -1,0 +1,181 @@
+{
+  "backend": {
+    "name": "github",
+    "repo": "wuyonglv/swiftalyn-com",
+    "branch": "main"
+  },
+  "local_backend": true,
+  "locale": "zh_Hans",
+  "media_folder": "images/uploads",
+  "public_folder": "images/uploads",
+  "collections": [
+    {
+      "name": "site",
+      "label": "网站内容",
+      "editor": {
+        "preview": false
+      },
+      "files": [
+        {
+          "name": "home",
+          "label": "首页文案",
+          "file": "content/home.json",
+          "fields": [
+            {
+              "name": "hero",
+              "label": "首页横幅",
+              "widget": "object",
+              "fields": [
+                {
+                  "name": "tagline",
+                  "label": "标题（支持换行）",
+                  "widget": "text"
+                }
+              ]
+            },
+            {
+              "name": "about",
+              "label": "关于我们",
+              "widget": "object",
+              "fields": [
+                {
+                  "name": "title",
+                  "label": "模块标题",
+                  "widget": "string"
+                },
+                {
+                  "name": "items",
+                  "label": "内容",
+                  "widget": "list",
+                  "min": 3,
+                  "max": 3,
+                  "fields": [
+                    {
+                      "name": "title",
+                      "label": "标题",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "text",
+                      "label": "正文",
+                      "widget": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "partners",
+              "label": "合作伙伴",
+              "widget": "list",
+              "min": 2,
+              "max": 2,
+              "fields": [
+                {
+                  "name": "title",
+                  "label": "标题",
+                  "widget": "string"
+                },
+                {
+                  "name": "text",
+                  "label": "正文",
+                  "widget": "text"
+                }
+              ]
+            },
+            {
+              "name": "footer",
+              "label": "页脚",
+              "widget": "object",
+              "fields": [
+                {
+                  "name": "copyright",
+                  "label": "版权文字",
+                  "widget": "string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "products",
+          "label": "精选商品",
+          "file": "content/products.json",
+          "fields": [
+            {
+              "name": "title",
+              "label": "模块标题",
+              "widget": "string"
+            },
+            {
+              "name": "emptyMessage",
+              "label": "无商品提示",
+              "widget": "string"
+            },
+            {
+              "name": "products",
+              "label": "商品",
+              "widget": "list",
+              "summary": "{{fields.name}}",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "唯一 ID",
+                  "widget": "string"
+                },
+                {
+                  "name": "name",
+                  "label": "商品名称",
+                  "widget": "text"
+                },
+                {
+                  "name": "price",
+                  "label": "价格",
+                  "widget": "number",
+                  "value_type": "float",
+                  "min": 0,
+                  "step": 0.01
+                },
+                {
+                  "name": "currency",
+                  "label": "币种",
+                  "widget": "select",
+                  "options": [
+                    "GBP",
+                    "USD",
+                    "EUR"
+                  ],
+                  "default": "GBP"
+                },
+                {
+                  "name": "image",
+                  "label": "商品图片",
+                  "widget": "image",
+                  "required": false
+                },
+                {
+                  "name": "imageAlt",
+                  "label": "图片说明",
+                  "widget": "string",
+                  "required": false
+                },
+                {
+                  "name": "description",
+                  "label": "商品描述",
+                  "widget": "text",
+                  "required": false
+                },
+                {
+                  "name": "href",
+                  "label": "本站详情页路径",
+                  "widget": "string",
+                  "required": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

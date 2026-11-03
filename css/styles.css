@@ -599,6 +599,7 @@ SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
           animation-fill-mode: forwards; 
           animation-timing-function: ease; 
           opacity: 0;
+}
 
 /* Original style block 12 */
 @keyframes blink { 0%, 100% { opacity: 0; } 50% { opacity: 1; }}

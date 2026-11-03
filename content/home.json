@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "tagline": "Swiftalyn \nFast Relief  Natural Repair\n\nBecause Every Detail Deserves Care"
+  },
+  "about": {
+    "title": "About Swiftalyn",
+    "items": [
+      {
+        "title": "Our Mission",
+        "text": "At Swiftalyn, We create powerful, nature-based treatments that restore skin, nails, and hair — so you can look and feel your best."
+      },
+      {
+        "title": "Our Team",
+        "text": "A small team of care-driven experts passionate about natural healing."
+      },
+      {
+        "title": "Our Services",
+        "text": "Natural, fast-acting solutions for skin, nails, and hair care.\nWe provide effective care using clean, natural ingredients.\nSafe, simple treatments to restore skin, nails, and hair.\nTrusted care for common issues — fast, gentle, and real."
+      }
+    ]
+  },
+  "partners": [
+    {
+      "title": "Authorized Supplier",
+      "text": "Guangzhou Suyan Biotechnology Co., Ltd.\n（广州市素颜生物科技有限公司）"
+    },
+    {
+      "title": "Approved Reseller",
+      "text": "Company Name: Jiangsu Jingfanyan New Energy Co., Ltd.\n（江苏晶凡研新能源有限公司）\nAddress:\nWest Side of Fumin Road, Caoqiao Town, Xinyi City, Jiangsu Province, China, 221400\n（江苏省新沂市草桥镇富民路西侧221400）\nEmail: Khaolmzhen@outlook.com"
+    }
+  ],
+  "footer": {
+    "copyright": "Copyright © 2026 Swiftalyn - All Rights Reserved."
+  }
+}
