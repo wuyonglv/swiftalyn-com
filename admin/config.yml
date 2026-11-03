@@ -176,6 +176,143 @@
               ]
             }
           ]
+        },
+        {
+          "name": "contact",
+          "label": "Contact Us 联系我们",
+          "file": "content/contact.json",
+          "fields": [
+            {
+              "name": "title",
+              "label": "模块标题",
+              "widget": "string"
+            },
+            {
+              "name": "infoTitle",
+              "label": "联系信息标题",
+              "widget": "string"
+            },
+            {
+              "name": "company",
+              "label": "公司名称",
+              "widget": "string"
+            },
+            {
+              "name": "address",
+              "label": "公司地址",
+              "widget": "text"
+            },
+            {
+              "name": "phone",
+              "label": "联系电话",
+              "widget": "string"
+            },
+            {
+              "name": "email",
+              "label": "展示邮箱",
+              "widget": "string"
+            },
+            {
+              "name": "hoursTitle",
+              "label": "营业时间标题",
+              "widget": "string"
+            },
+            {
+              "name": "hours",
+              "label": "每周营业时间",
+              "widget": "list",
+              "min": 7,
+              "max": 7,
+              "summary": "{{fields.day}}",
+              "fields": [
+                {
+                  "name": "day",
+                  "label": "星期",
+                  "widget": "select",
+                  "options": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                  ]
+                },
+                {
+                  "name": "open",
+                  "label": "开始时间（HH:MM）",
+                  "widget": "string",
+                  "pattern": [
+                    "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+                    "请填写 09:00 这样的 24 小时时间"
+                  ]
+                },
+                {
+                  "name": "close",
+                  "label": "结束时间（HH:MM）",
+                  "widget": "string",
+                  "pattern": [
+                    "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+                    "请填写 17:00 这样的 24 小时时间"
+                  ]
+                },
+                {
+                  "name": "closed",
+                  "label": "当天休息",
+                  "widget": "boolean",
+                  "default": false
+                }
+              ]
+            },
+            {
+              "name": "mapAddress",
+              "label": "地图地址 / 导航说明",
+              "widget": "string"
+            },
+            {
+              "name": "latitude",
+              "label": "地图纬度",
+              "widget": "number",
+              "value_type": "float",
+              "min": -90,
+              "max": 90,
+              "step": 1e-07
+            },
+            {
+              "name": "longitude",
+              "label": "地图经度",
+              "widget": "number",
+              "value_type": "float",
+              "min": -180,
+              "max": 180,
+              "step": 1e-07
+            },
+            {
+              "name": "zoom",
+              "label": "地图缩放级别",
+              "widget": "number",
+              "value_type": "int",
+              "min": 1,
+              "max": 20
+            },
+            {
+              "name": "formTitle",
+              "label": "表单标题 / 展开按钮文字",
+              "widget": "string"
+            },
+            {
+              "name": "recipientEmail",
+              "label": "表单收件邮箱",
+              "widget": "string",
+              "hint": "更换后需要在新邮箱中完成 FormSubmit 验证，才能接收表单邮件。"
+            },
+            {
+              "name": "subject",
+              "label": "表单邮件主题",
+              "widget": "string"
+            }
+          ]
         }
       ]
     }

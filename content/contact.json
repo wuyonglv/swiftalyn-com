@@ -1,0 +1,60 @@
+{
+  "title": "Contact Us",
+  "infoTitle": "Swiftalyn",
+  "company": "GENUINE INNOVATION LTD",
+  "address": "International House, 36-38 Cornhill, London, England, EC3V 3NG",
+  "phone": "+44 7888401971",
+  "email": "service@swiftalyn.com",
+  "hoursTitle": "Hours",
+  "hours": [
+    {
+      "day": "Monday",
+      "open": "09:00",
+      "close": "17:00",
+      "closed": false
+    },
+    {
+      "day": "Tuesday",
+      "open": "09:00",
+      "close": "17:00",
+      "closed": false
+    },
+    {
+      "day": "Wednesday",
+      "open": "09:00",
+      "close": "17:00",
+      "closed": false
+    },
+    {
+      "day": "Thursday",
+      "open": "09:00",
+      "close": "17:00",
+      "closed": false
+    },
+    {
+      "day": "Friday",
+      "open": "09:00",
+      "close": "17:00",
+      "closed": false
+    },
+    {
+      "day": "Saturday",
+      "open": "09:00",
+      "close": "17:00",
+      "closed": true
+    },
+    {
+      "day": "Sunday",
+      "open": "09:00",
+      "close": "17:00",
+      "closed": true
+    }
+  ],
+  "mapAddress": "EC3V 3NG",
+  "latitude": 51.5132745,
+  "longitude": -0.0860948,
+  "zoom": 14,
+  "formTitle": "Drop us a line!",
+  "recipientEmail": "service@swiftalyn.com",
+  "subject": "Swiftalyn website contact form"
+}

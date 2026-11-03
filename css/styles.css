@@ -624,3 +624,8 @@ SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
 .local-products-message { grid-column: 1 / -1; text-align: center; padding: 24px 0; }
 @media (max-width: 767px) { .local-products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
 @media (max-width: 450px) { .local-products { grid-template-columns: 1fr; } }
+
+/* Contact hours fallback before the interactive widget is loaded. */
+.contact-hours { border-collapse: collapse; width: 100%; max-width: 360px; }
+.contact-hours th, .contact-hours td { padding: 4px 12px 4px 0; text-align: left; }
+.contact-hours th { font-weight: normal; }

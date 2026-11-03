@@ -8,10 +8,13 @@
 - About 标题及三个内容块
 - 供应商 / 经销商的标题与正文
 - Featured Products 标题、空列表提示，以及商品的新增、删除、排序、名称、价格、币种、图片、描述和本站详情链接
+- Contact Us 标题、公司名称、地址、电话、展示邮箱、营业时间、地图位置、表单标题、收件邮箱和邮件主题
 - 页脚版权文字
 
-内容源为 `content/home.json` 和 `content/products.json`。图片保存在 `images/`，
-后台上传图片保存在 `images/uploads/`。地图和联系表单继续使用原有组件，本次未开放这些组件的编辑。
+内容源为 `content/home.json`、`content/products.json` 和 `content/contact.json`。图片保存在 `images/`，
+后台上传图片保存在 `images/uploads/`。地图和联系表单继续使用原有组件，构建会同步更新其初始化配置。
+Contact Us 在后台中是独立的“Contact Us 联系我们”入口。星期需各出现一次，时间采用 24 小时制。
+更换表单收件邮箱后需在新邮箱完成 FormSubmit 的激活验证；更换地图地址时还需同步调整坐标。
 About 固定三个内容块，合作伙伴固定两个，以匹配现有布局。
 
 ## 本地编辑和预览
