@@ -67,10 +67,15 @@ def update_widgets(source, contact):
         elif el == 'bs-3':
             props['formTitle'] = contact['formTitle']
             props['infoTitle'] = contact['infoTitle']
-            props['info'] = json.dumps({'blocks': [{
+            blocks = [{
                 'key': f'cms{i}', 'text': line, 'type': 'unstyled', 'depth': 0,
                 'inlineStyleRanges': [], 'entityRanges': [], 'data': {}
-            } for i, line in enumerate(info_lines(contact))], 'entityMap': {}})
+            } for i, line in enumerate(info_lines(contact))]
+            blocks[-1]['entityRanges'] = [{'offset': len('Email: '), 'length': len(contact['email']), 'key': 0}]
+            props['info'] = json.dumps({'blocks': blocks, 'entityMap': {
+                '0': {'type': 'LINK', 'mutability': 'MUTABLE',
+                      'data': {'url': 'mailto:' + contact['email']}}
+            }})
         elif el == 'bs-4':
             props.update(lat=str(contact['latitude']), lon=str(contact['longitude']),
                          address=contact['mapAddress'], zoom=contact['zoom'])

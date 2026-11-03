@@ -33,6 +33,11 @@ class ContactTests(unittest.TestCase):
         self.assertEqual(props['bs-2']['structuredHours'][0]['hour']['openTime'], '10:30')
         self.assertEqual(props['bs-3']['formTitle'], 'Write to us')
         self.assertIn('New company', props['bs-3']['info'])
+        info = json.loads(props['bs-3']['info'])
+        self.assertEqual(info['entityMap']['0']['data']['url'], 'mailto:new@example.com')
+        email_block = info['blocks'][-1]
+        link = email_block['entityRanges'][0]
+        self.assertEqual(email_block['text'][link['offset']:link['offset'] + link['length']], 'new@example.com')
         self.assertEqual(props['bs-4']['lat'], '40.5')
         self.assertEqual(props['bs-4']['address'], 'New map address')
         context = next(l for l in source.splitlines() if "window.wsb['context-bs-1']=" in l)
