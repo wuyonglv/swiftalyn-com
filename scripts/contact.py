@@ -50,7 +50,7 @@ def html_targets(contact):
         label = 'Closed' if hour['closed'] else f"{hour['open']} – {hour['close']}"
         rows.append(f'<tr><th scope="row">{day}</th><td>{escape(label)}</td></tr>')
     return {'CONTACT_INTRO_DESC_REND': info,
-            'CONTACT_HOURS_REND': '<table class="contact-hours"><tbody>' + ''.join(rows) + '</tbody></table>'}
+            'CONTACT_HOURS_REND': '<div id="bs-2"><table class="contact-hours"><tbody>' + ''.join(rows) + '</tbody></table></div>'}
 
 
 def update_widgets(source, contact):

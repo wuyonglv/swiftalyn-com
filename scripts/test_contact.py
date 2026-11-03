@@ -23,6 +23,8 @@ class ContactTests(unittest.TestCase):
                      'New map address', '10:30 – 18:00']:
             self.assertIn(text, page)
         self.assertEqual(page.count('Write to us'), 3)
+        for element in ['bs-2', 'bs-3', 'bs-4']:
+            self.assertEqual(page.count(f'id="{element}"'), 1)
         source = (ROOT / 'js/script.js').read_text()
         updated = update_widgets(source, c)
         props = {}
