@@ -2,7 +2,9 @@
   "backend": {
     "name": "github",
     "repo": "wuyonglv/swiftalyn-com",
-    "branch": "main"
+    "branch": "main",
+    "base_url": "https://swiftalyn-cms-auth.swiftalyn-cms.workers.dev",
+    "auth_endpoint": "auth"
   },
   "local_backend": true,
   "locale": "zh_Hans",

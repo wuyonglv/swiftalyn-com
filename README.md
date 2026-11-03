@@ -46,23 +46,40 @@ Source 设为 **GitHub Actions**。推送到 `main` 后自动构建并部署 `_s
 后台发布内容会提交到 `wuyonglv/swiftalyn-com` 的 `main` 分支，随后触发相同构建。
 如果使用自定义域名，请在仓库根目录保留相应 `CNAME` 文件，构建会复制它。
 
-## 线上登录：尚待接入 OAuth
+## 线上登录（Cloudflare OAuth）
 
-目前没有提供 OAuth 服务，所以线上后台会显示配置提示，不会显示不可用的登录按钮。
-GitHub Pages 只托管静态文件；Decap GitHub 后端需要额外的 OAuth 认证服务，且编辑者需具有仓库写权限。
+认证 Worker 已部署到 `https://swiftalyn-cms-auth.swiftalyn-cms.workers.dev`，
+源码为 `oauth/worker.mjs`，配置为 `oauth/wrangler.toml`。网站后台配置已指向该地址。
+已确认 Worker 中存在两项 OAuth 凭据，且 `/auth` 可正常跳转至 GitHub。
+完整登录授权仍需在浏览器中验证。以下步骤供后续维护或重新配置使用。
 
-取得兼容 Decap 的认证服务地址后，在 `admin/config.yml` 的 `backend` 对象中补充：
+在 https://github.com/settings/applications/new 创建 OAuth App：
 
-```json
-"base_url": "https://你的认证服务域名",
-"auth_endpoint": "auth"
+- Application name：`Swiftalyn CMS`
+- Homepage URL：`https://swiftalyn-cms-auth.swiftalyn-cms.workers.dev`
+- Authorization callback URL：`https://swiftalyn-cms-auth.swiftalyn-cms.workers.dev/callback`
+
+创建后生成 Client Secret。在本项目根目录分别执行以下命令，按提示输入对应值：
+
+```sh
+npm exec --yes --package=wrangler@4.59.1 -- wrangler secret put GITHUB_OAUTH_ID --config oauth/wrangler.toml
+npm exec --yes --package=wrangler@4.59.1 -- wrangler secret put GITHUB_OAUTH_SECRET --config oauth/wrangler.toml
 ```
 
-该文件采用 JSON 语法（也是合法 YAML），修改时注意逗号。
-OAuth 回调地址由认证服务决定，需按服务说明在 GitHub OAuth App 中登记。
-Client Secret 只配置在认证服务端，不得写入仓库或静态页面。
-当前未创建 OAuth App、未部署认证服务、未更改 GitHub Pages 设置。
-参考：https://decapcms.org/docs/github-backend/
+凭据只保存到 Cloudflare，不写入仓库或聊天记录。`GITHUB_OAUTH_ID` 对应 Client ID，
+`GITHUB_OAUTH_SECRET` 对应 Client Secret。两项保存后不需要重新部署 Worker。
+编辑者必须对 `wuyonglv/swiftalyn-com` 有写入权限。
+
+Worker 允许的后台来源在 `oauth/wrangler.toml` 的 `ALLOWED_ORIGINS` 中配置。
+若后台域名改变，需同步修改并重新部署 Worker。私有仓库需要将
+`GITHUB_REPO_PRIVATE` 改为 `"1"` 后重新部署并重新授权。
+
+```sh
+node --test oauth/worker.test.mjs
+npm exec --yes --package=wrangler@4.59.1 -- wrangler deploy --config oauth/wrangler.toml
+```
+
+本地后台仍使用 `decap-server`，不依赖线上 OAuth。
 
 ## 样式
 
